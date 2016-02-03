@@ -9,6 +9,7 @@ module.exports = (app, request) => {
         let contributionData = {};
         contributionData.username = entry.login;
         contributionData.contributions = entry.contributions;
+        contributionData.id = entry.id;
         parsedJSON.push(contributionData);
       });
       res.send(parsedJSON);
