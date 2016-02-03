@@ -3,6 +3,8 @@
  * @module controllers/commits
 */
 
+import { getJSON } from './utils';
+
 'use strict';
 
 /**
