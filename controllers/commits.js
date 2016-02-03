@@ -26,7 +26,8 @@ module.exports = (app, request) => {
   });
 
   /** 
-   * Helper function for returning JSON from url.
+   * Helper function for returning JSON from url. Returns a Promise object
+     which will in turn resolve with the data returned from the Github API.
    *
    * @param {string} url - The url to query.
    * @return {object} data - JSON response from API.
