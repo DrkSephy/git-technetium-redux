@@ -15,7 +15,16 @@ module.exports = (app) => {
   app.get('/api/issues', (req, res) => {
     getJSON('https://api.github.com/repos/DrkSephy/git-technetium/issues?state=all')
     .then((data) => {
-      res.send(data);
+      let parsedJSON = [];
+      data.forEach((entry) => {
+        let issueData = {};
+        issueData.number = entry.number;
+        issueData.title = entry.title;
+        issueData.username = entry.user.login;
+        issueData.state = entry.state;
+        parsedJSON.push(issueData);
+      });
+      res.send(parsedJSON);
     });
   });
 }
