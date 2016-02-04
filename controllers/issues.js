@@ -22,6 +22,7 @@ module.exports = (app) => {
         issueData.title = entry.title;
         issueData.username = entry.user.login;
         issueData.state = entry.state;
+        issueData.id = entry.id;
         parsedJSON.push(issueData);
       });
       res.send(parsedJSON);
