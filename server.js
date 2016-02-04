@@ -33,7 +33,8 @@ app.use(express.static(path.join(__dirname, 'public')));
  *           EXPRESS ROUTES
  *---------------------------------------
 */
-require('./controllers/commits')(app, request);
+require('./controllers/commits')(app);
+require('./controllers/issues')(app);
 
 /*---------------------------------------
  *     EXPRESS MIDDLEWARE FOR REACT

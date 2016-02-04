@@ -11,7 +11,7 @@ import { getJSON  } from './utils';
  * GET /api/commits
  * Returns commit data for a given repository.
 */
-module.exports = (app, request) => {
+module.exports = (app) => {
   app.get('/api/commits', (req, res) => {
     getJSON('https://api.github.com/repos/DrkSephy/git-technetium/contributors')
     .then((data) => {
