@@ -27,7 +27,7 @@ class Issues extends React.Component {
     let issues = this.state.issues.map((data) => {
       return (
         <tr key={data.id}>
-          <td>{data.title}</td>
+          <td><a href={data.url}>{data.title}</a></td>
           <td>{data.number}</td>
           <td>{data.username}</td>
           <td>{data.state}</td>
