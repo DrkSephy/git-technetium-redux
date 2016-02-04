@@ -25,7 +25,6 @@ class Contributions extends React.Component {
 
   render() {
     let contributions = this.state.contributions.map((data) => {
-      console.log(data.id);
       return (
           <tr key={data.id}>
             <td>{data.username}</td>

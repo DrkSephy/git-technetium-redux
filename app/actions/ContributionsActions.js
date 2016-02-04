@@ -11,7 +11,6 @@ class ContributionsActions {
   getContributions() {
     $.ajax({ url: '/api/commits' })
       .done((data) => {
-        console.log(data);
         this.actions.getContributionsSuccess(data);
       })
       .fail((jqXhr) => {
