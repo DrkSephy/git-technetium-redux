@@ -3,7 +3,7 @@
  * @module controllers/commits
 */
 
-import { getJSON } from './utils';
+import { getJSON  } from './utils';
 
 'use strict';
 
@@ -26,21 +26,4 @@ module.exports = (app, request) => {
       res.send(parsedJSON);
     });
   });
-
-  /** 
-   * Helper function for returning JSON from url. Returns a Promise object
-     which will in turn resolve with the data returned from the Github API.
-   *
-   * @param {string} url - The url to query.
-   * @return {object} data - JSON response from API.
-  */
-  function getJSON(url) {
-    return new Promise((resolve, reject) => {
-      request.get(url, { 'headers': {'User-Agent': 'DrkSephy' }}, 
-        (error, response, body) => {
-          const data = JSON.parse(body);
-          resolve(data);
-        });
-    });
-  }
 }
